@@ -29,14 +29,24 @@ class MemberService {
       await fetch(`${BASE_API_URL}/members`, {
         method: 'POST',
         headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify(payload),
       });
     } catch (err) {
       console.error(err);
-      throw new Error('An error ocurred when creating member')
+      throw new Error('An error ocurred when creating member');
+    }
+  }
+
+  async searchTerm(id: string, search: string): Promise<Array<any> | undefined> {
+    try {
+      const response = await fetch(`${BASE_API_URL}/search/id/${id}/search/${search}`);
+      const data = await response.json();
+      return data;
+    } catch (err) {
+      console.error(err);
     }
   }
 }
