@@ -6,6 +6,12 @@ type Props = {
   onMemberClick?: (id: string) => void;
 };
 
+/**
+ * Presentation component that shows the list of members
+ *
+ * @param {Member[]} members list of members to be rendered
+ * @param {func} onMemberClick function to be executed when a card (member) is clicked
+ */
 function MemberList({ members, onMemberClick }: Props) {
   return (
     <div className="app-grid" role="list">

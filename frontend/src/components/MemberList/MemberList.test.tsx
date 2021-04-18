@@ -1,4 +1,4 @@
-import { render, screen, within } from '@testing-library/react';
+import { fireEvent, render, screen, within } from '@testing-library/react';
 import { Member } from '../../types';
 import MemberList from './MemberList';
 
@@ -36,5 +36,27 @@ describe('<MemberList />', () => {
 
     const message = getByText('No data was found');
     expect(message).toBeInTheDocument();
+  });
+
+  it('should react when a member card is clicked', () => {
+    const onClick = jest.fn();
+    render(
+      <MemberList
+        members={[
+          {
+            id: '1',
+            name: 'Test',
+            shortenedUrl: 'abc',
+          },
+        ]}
+        onMemberClick={onClick}
+      />
+    );
+
+    const listitem = screen.getByRole('listitem');
+    
+    fireEvent.click(listitem);
+
+    expect(onClick).toHaveBeenCalledTimes(1);
   });
 });
