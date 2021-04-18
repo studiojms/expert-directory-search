@@ -1,9 +1,9 @@
 import { render, screen } from '@testing-library/react';
-import CreateMember from './CreateMember';
+import CreateMemberPage from './CreateMemberPage';
 
-describe('<CreateMember />', () => {
+describe('<CreateMemberPage />', () => {
   beforeEach(() => {
-    render(<CreateMember />);
+    render(<CreateMemberPage />);
   });
 
   it('should show two fields for user to fill with information', () => {

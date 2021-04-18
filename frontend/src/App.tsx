@@ -4,7 +4,7 @@ import Template from './components/Template';
 
 import './assets/styles.scss';
 import MemberList from './pages/MemberListPage/MemberListPage';
-import CreateMember from './pages/CreateMember/CreateMember';
+import CreateMemberPage from './pages/CreateMemberPage/CreateMemberPage';
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
             <MemberList />
           </Route>
           <Route path="/create-member" exact>
-            <CreateMember />
+            <CreateMemberPage />
           </Route>
         </Switch>
       </Template>

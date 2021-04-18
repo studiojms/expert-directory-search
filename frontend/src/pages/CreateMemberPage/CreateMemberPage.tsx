@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useHistory } from 'react-router';
 
-function CreateMember() {
+function CreateMemberPage() {
   const [name, setName] = useState('');
   const [website, setWebsite] = useState('');
   const history = useHistory();
@@ -54,4 +54,4 @@ function CreateMember() {
   );
 }
 
-export default CreateMember;
+export default CreateMemberPage;
