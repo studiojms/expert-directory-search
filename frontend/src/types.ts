@@ -1,5 +1,5 @@
 export type Member = {
-  id?: string;
+  id: string;
   name: string;
   websiteUrl?: string;
   shortenedUrl: string;
