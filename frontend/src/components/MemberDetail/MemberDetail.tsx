@@ -1,11 +1,13 @@
 import { Link } from 'react-router-dom';
 import { Member } from '../../types';
 
-interface Props extends Member {}
+interface Props extends Member {
+  className?: string
+}
 
-function MemberDetail({ name, websiteUrl, shortenedUrl, headings, friends }: Props) {
+function MemberDetail({ className, name, websiteUrl, shortenedUrl, headings, friends }: Props) {
   return (
-    <section className="app-member-detail">
+    <section className={`app-member-detail ${className}`}>
       <header>
         <h2>{name}</h2>
       </header>

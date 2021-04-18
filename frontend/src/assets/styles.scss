@@ -175,8 +175,17 @@ ul.with-bullets {
 .mb--10 {
   margin-bottom: 10px;
 }
+
+.mt--2 {
+  margin-top: 2px;
+}
+
 .mt--20 {
   margin-top: 20px;
+}
+
+.full-width {
+  width: 100%;
 }
 
 .app-grid {
@@ -222,4 +231,19 @@ button.link {
   &:hover {
     color: darken(rgb(5, 5, 231), 10%);
   }
+}
+
+.app-details {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding-right: 20px;
+}
+
+.flex-container {
+  display: flex;
+}
+
+.max-height--30 {
+  max-height: 30px;
 }
