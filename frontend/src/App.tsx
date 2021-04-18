@@ -3,7 +3,8 @@ import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import Template from './components/Template';
 
 import './assets/styles.scss';
-import Home from './components/Home/Home';
+import MemberList from './components/pages/MemberList/MemberList';
+import CreateMember from './components/pages/CreateMember/CreateMember';
 
 function App() {
   return (
@@ -11,7 +12,10 @@ function App() {
       <Template>
         <Switch>
           <Route path="/" exact>
-            <Home />
+            <MemberList />
+          </Route>
+          <Route path="/create-member" exact>
+            <CreateMember />
           </Route>
         </Switch>
       </Template>

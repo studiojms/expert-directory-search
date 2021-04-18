@@ -1,5 +1,5 @@
 import { ReactElement } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 type Props = {
   children: ReactElement;
@@ -11,15 +11,17 @@ function Template({ children }: Props) {
       <header className="app-header">
         <nav>
           <div className="nav-wrapper">
-            <NavLink to="/">
-              <h1>Expert Directory</h1>
-            </NavLink>
+            <h1>Expert Directory</h1>
             <ul className="nav-items">
               <li>
-                <NavLink to="">Add</NavLink>
+                <NavLink to="/" activeClassName="active" exact>
+                  List Members
+                </NavLink>
               </li>
               <li>
-                <NavLink to="">List</NavLink>
+                <NavLink to="/create-member" activeClassName="active" exact>
+                  Create Member
+                </NavLink>
               </li>
             </ul>
           </div>
