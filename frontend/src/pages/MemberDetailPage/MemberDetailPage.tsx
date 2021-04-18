@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router';
+import { useHistory, useParams } from 'react-router';
+import MemberDetail from '../../components/MemberDetail/MemberDetail';
 import MemberService from '../../services/MemberService';
 import { Member } from '../../types';
 
@@ -9,6 +10,7 @@ type PageParams = {
 
 function MemberDetailPage() {
   const { id } = useParams<PageParams>();
+  const history = useHistory();
   const [member, setMember] = useState<Member | null>(null);
 
   useEffect(() => {
@@ -25,7 +27,10 @@ function MemberDetailPage() {
   return (
     <>
       <h3>Member Details</h3>
-      {member?.name}
+      <button className="mt--20 link" onClick={() => history.goBack()}>
+        <span>&lt;</span> Go back
+      </button>
+      <MemberDetail {...(member as Member)} />
     </>
   );
 }

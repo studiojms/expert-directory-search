@@ -23,6 +23,15 @@ ol {
   }
 }
 
+ul.with-bullets {
+  padding-left: 20px;
+
+  li {
+    list-style: disc;
+    padding: 0 5px;
+  }
+}
+
 .app-header {
   position: fixed;
   top: 0;
@@ -184,4 +193,33 @@ ol {
   padding: 20px;
   font-weight: 600;
   cursor: pointer;
+}
+
+.app-member-detail {
+  margin: 20px;
+
+  header {
+    padding-top: 20px;
+    border-bottom: 1px solid #0a0a0a;
+    margin-bottom: 20px;
+  }
+
+  .app-member-detail-info {
+    & p {
+      margin: 10px 0;
+    }
+  }
+}
+
+button.link {
+  background-color: inherit;
+  border: none;
+  text-transform: uppercase;
+  color: rgb(5, 5, 231);
+  font-weight: 600;
+  cursor: pointer;
+
+  &:hover {
+    color: darken(rgb(5, 5, 231), 10%);
+  }
 }

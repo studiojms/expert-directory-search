@@ -4,5 +4,5 @@ export type Member = {
   websiteUrl?: string;
   shortenedUrl: string;
   headings?: string[];
-  friends?: string[];
+  friends?: Member[];
 };
