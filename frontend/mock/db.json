@@ -1,0 +1,25 @@
+{
+  "members": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "websiteUrl": "http://www.google.com",
+      "shortenedUrl": "http://bit.ly/test",
+      "headings": ["Title 1", "Title 2", "Title 3"],
+      "friends": []
+    },
+    {
+      "id": 2,
+      "name": "Mary Kwon",
+      "websiteUrl": "http://www.bing.com",
+      "shortenedUrl": "http://bit.ly/bing",
+      "headings": ["Sample", "Another sample"],
+      "friends": [
+        {
+          "name": "James Bond",
+          "id": 4
+        }
+      ]
+    }
+  ]
+}

@@ -22,7 +22,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "api": "json-server mock/db.json --port 8080"
   },
   "eslintConfig": {
     "extends": [
@@ -45,6 +46,7 @@
   "devDependencies": {
     "@types/react-router": "^5.1.13",
     "@types/react-router-dom": "^5.1.7",
+    "json-server": "^0.16.3",
     "node-sass": "^5.0.0"
   }
 }
