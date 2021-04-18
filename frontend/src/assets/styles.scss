@@ -138,3 +138,29 @@ ol {
     }
   }
 }
+
+.app-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-gap: 10px;
+  padding: 15px 0;
+}
+
+.app-card {
+  border: 1px solid #dedede;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+
+  &:hover {
+    background-color: darken(#f0f0f0, 10%);
+    cursor: pointer;
+  }
+}
+
+.mb--10 {
+  margin-bottom: 10px;
+}
+.mt--20 {
+  margin-top: 20px;
+}
