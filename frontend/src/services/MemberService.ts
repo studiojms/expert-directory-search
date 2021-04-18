@@ -13,6 +13,16 @@ class MemberService {
     }
   }
 
+  async getMemberById(id: string): Promise<Member | undefined> {
+    try {
+      const response = await fetch(`${BASE_API_URL}/members/${id}`);
+      const data = await response.json();
+      return data as Member;
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
   async createMember(name: string, website: string) {
     try {
       const payload = { name, website };
