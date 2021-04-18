@@ -6,7 +6,7 @@ type Props = {
 
 function Card({ title, url, totalFriends = 0 }: Props) {
   return (
-    <section className="app-card">
+    <section className="app-card" role="listitem">
       <h4 className="mb--10">{title}</h4>
       <p>
         <a href={url}>Website</a>
