@@ -25,3 +25,8 @@ logging:
         boot:
           autoconfigure:
             logging: info
+
+queue:
+  exchange-name: member-process-exchange
+  shortener-routing-key: member.website.shortener
+  scrapping-routing-key: member.website.scrapping
