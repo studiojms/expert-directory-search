@@ -17,7 +17,10 @@ public class MessageConfiguration {
     @Value("queue.exchange-name")
     private String exchange;
 
-    static final String queueName = "spring-boot";
+    @Value("shortener-routing-key")
+    private String shortenerUrlKey;
+
+    static final String queueName = "default";
 
     @Bean
     Queue queue() {
@@ -31,7 +34,7 @@ public class MessageConfiguration {
 
     @Bean
     Binding binding(Queue queue, TopicExchange exchange) {
-        return BindingBuilder.bind(queue).to(exchange).with("samples.spring.messaging");
+        return BindingBuilder.bind(queue).to(exchange).with(shortenerUrlKey);
     }
 
     @Bean
@@ -46,6 +49,6 @@ public class MessageConfiguration {
 
     @Bean
     MessageListenerAdapter listenerAdapter(MessageReceiver receiver) {
-        return new MessageListenerAdapter(receiver, "receive");
+        return new MessageListenerAdapter(receiver, "receiveMessage");
     }
 }
