@@ -44,8 +44,7 @@ public class MemberController {
             URI uri = uriComponentsBuilder.path("/members/{id}").buildAndExpand(member.getId()).toUri();
 
             response = ResponseEntity.created(uri).body(new MemberTO(member));
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             LOGGER.error("An error occurred when creating a new member", e);
 
             response = ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();

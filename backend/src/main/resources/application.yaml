@@ -25,3 +25,7 @@ logging:
         boot:
           autoconfigure:
             logging: info
+
+queue:
+  exchange-name: member-process-exchange
+  processor-routing-key: member.website.process

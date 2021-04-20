@@ -14,6 +14,9 @@ public class MemberService {
     @Autowired
     private IMemberRepository memberRepository;
 
+    @Autowired
+    private MessageService messageService;
+
     public List<Member> list() {
         return memberRepository.findAll();
     }
@@ -23,12 +26,21 @@ public class MemberService {
     }
 
     @Transactional
-    public Member create(MemberTO memberTO) {
+    public Member create(MemberTO memberTO) throws Exception {
         Member member = new Member();
         member.setName(memberTO.getName());
         member.setWebsiteUrl(memberTO.getWebsiteUrl());
 
-        return memberRepository.save(member);
+        final Member persistedMember = memberRepository.save(member);
+
+        messageService.sendToProcessQueue(new MemberTO(persistedMember));
+
+        return persistedMember;
     }
 
+    public Member update(MemberTO memberTO) {
+        final Member member = memberTO.convertToDomain();
+
+        return memberRepository.save(member);
+    }
 }
