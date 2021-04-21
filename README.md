@@ -2,6 +2,15 @@
 
 Spring boot + React - Expert directory search tool
 
+## Running
+
+To run the app, just run `./run.sh`
+
+### Requirements
+
+- JAVA 11
+
+
 # Coding Challenge
 
 The object of this coding challenge is to create an application so we can see your code-foo in action.

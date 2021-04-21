@@ -42,7 +42,7 @@ class MemberService {
 
   async searchTerm(id: string, search: string): Promise<Array<any> | undefined> {
     try {
-      const response = await fetch(`${BASE_API_URL}/search/id/${id}/search/${search}`);
+      const response = await fetch(`${BASE_API_URL}/members/search/id/${id}/search/${search}`);
       const data = await response.json();
       return data;
     } catch (err) {

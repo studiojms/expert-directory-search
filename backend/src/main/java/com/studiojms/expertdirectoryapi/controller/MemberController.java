@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.net.URI;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -60,6 +61,23 @@ public class MemberController {
         try {
             Member member = memberService.findById(id);
             response = ResponseEntity.ok(new MemberTO(member));
+        } catch (Exception e) {
+            response = ResponseEntity.noContent().build();
+        }
+        return response;
+    }
+
+    @GetMapping("/search/id/{id}/search/{search}")
+    public ResponseEntity<List<MemberTO>> searchRelatedContent(@PathVariable("id") Long id,
+                                                               @PathVariable("search") String searchTerm) {
+        ResponseEntity<List<MemberTO>> response;
+
+        try {
+            //TODO implement related content search
+            //List<MemberTO> members = memberService.searchRelatedContent(id, searchTerm);
+
+            List<MemberTO> members = new ArrayList<>();
+            response = ResponseEntity.ok(members);
         } catch (Exception e) {
             response = ResponseEntity.noContent().build();
         }
